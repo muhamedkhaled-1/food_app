@@ -4,6 +4,8 @@ import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/w
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/widgets/on_boarding_view_body2.dart';
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/widgets/on_boarding_view_body3.dart';
 
+import '../../../../../constants.dart';
+import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../auth/presentation/views/login_page_view.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -46,6 +48,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               children: [
                 OnBoardingViewBody(
                   onTap: (){
+                    Prefs.setBool(KisOnboardingSeen, true);
                     _pageController.nextPage(
                       duration: Duration(milliseconds: 500),
                       curve: Curves.ease,
@@ -56,6 +59,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 OnBoardingViewBody2(
                   position: currentPage,
                   onTap: () {
+                    Prefs.setBool(KisOnboardingSeen, true);
                     _pageController.nextPage(duration: Duration(milliseconds: 500),
                         curve: Curves.ease);
                   },
@@ -63,6 +67,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 OnBoardingViewBody3(
                   position: currentPage,
                   onTap: () {
+                    Prefs.setBool(KisOnboardingSeen, true);
                     Navigator.pushReplacementNamed(context, LoginPageView.routeName);
                   },
                 )

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/constants.dart';
+import 'package:food_app/core/services/shared_preferences_singleton.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/login_page_view.dart';
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 import '../../../../../../generated/assets.dart';
@@ -39,8 +42,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void excuteNavigation() {
+    bool isOnBoardingViewSeen=Prefs.getBool(KisOnboardingSeen);
     Future.delayed(Duration(seconds: 2),(){
-      Navigator.pushReplacementNamed(context, OnBoardingView.routNamte);
+      if (isOnBoardingViewSeen) {
+        Navigator.pushReplacementNamed(context, LoginPageView.routeName);
+      }else{
+        Navigator.pushReplacementNamed(context, OnBoardingView.routNamte);
+      }
     });
   }
 }

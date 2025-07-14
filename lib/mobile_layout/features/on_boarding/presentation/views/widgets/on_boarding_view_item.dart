@@ -1,6 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/constants.dart';
+import 'package:food_app/core/services/shared_preferences_singleton.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/login_page_view.dart';
 
 import '../../../../../../utils/text_styles.dart';
@@ -56,6 +58,7 @@ class OnBoardingViewItem extends StatelessWidget {
             maintainAnimation: true,
             child: GestureDetector(
                 onTap: () {
+                  Prefs.setBool(KisOnboardingSeen, true);
                   Navigator.pushReplacementNamed(context, LoginPageView.routeName);
                 },
                 child: Text('Skip'))),
