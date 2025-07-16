@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/constants.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/forget_password_view.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_container.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_header.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/container_custom_padding.dart';
@@ -45,7 +46,12 @@ class LoginPageViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(child: RememberMeListTile()),
-                    Text('Forgot Password',style: AppTextStyles.styleRegular16.copyWith(color: KprimaryColor),)
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, ForgetPasswordView.routeName);
+                      },
+                      child: Text('Forgot Password',style: AppTextStyles.styleRegular16.copyWith(color: KprimaryColor),),
+                      )
                   ],
                 ),
                 SizedBox(height: 29,),

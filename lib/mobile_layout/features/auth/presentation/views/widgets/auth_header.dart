@@ -6,8 +6,9 @@ import '../../../../../../generated/assets.dart';
 import '../../../../../../utils/text_styles.dart';
 
 class AuthHeader extends StatelessWidget {
-  const AuthHeader({super.key, required this.title, required this.subTitle});
+  const AuthHeader({super.key, required this.title, required this.subTitle,  this.positionedWidth});
 final String title,subTitle;
+final double? positionedWidth;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -28,7 +29,7 @@ final String title,subTitle;
                 right: width * 0.01,
               ),
               Positioned(
-                  left: width * 0.4,
+                  left: width *(positionedWidth?? 0.4),
                   top: height * .45,
                   child: Text(
                     title,

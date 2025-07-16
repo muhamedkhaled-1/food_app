@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/forget_password_view.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/login_page_view.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/sign_up_view.dart';
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/on_boarding_view.dart';
@@ -21,6 +22,8 @@ Route<dynamic>onGenrateRoute(RouteSettings setting){
       return MaterialPageRoute(builder: (context) => const LoginPageView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case ForgetPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => const ForgetPasswordView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

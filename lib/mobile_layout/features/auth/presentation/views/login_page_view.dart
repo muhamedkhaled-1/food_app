@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/constants.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/login_page_view_body.dart';
 
 class LoginPageView extends StatelessWidget {
@@ -8,7 +9,7 @@ class LoginPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff121223),
+      backgroundColor: KbackColor,
       body: LoginPageViewBody(),
     );
   }
