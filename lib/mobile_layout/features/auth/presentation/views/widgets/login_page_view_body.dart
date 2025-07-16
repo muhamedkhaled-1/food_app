@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app/constants.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_container.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_header.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/container_custom_padding.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/dont_have_account.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/layout_text_form_field.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/remember_me_list_tile.dart';
@@ -21,8 +22,7 @@ class LoginPageViewBody extends StatelessWidget {
       children: [
         AuthHeader(title: 'Log In', subTitle: 'Please sign in to your existing account'),
         AuthContainer(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
+          child: ContainerCustomPadding(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,7 +35,7 @@ class LoginPageViewBody extends StatelessWidget {
                   height: 24,
                 ),
                 LayoutTextFormField(
-                  hintText: '**********',
+                  hintText: '* * * * * * * * * *',
                   keyboardType: TextInputType.visiblePassword,
                   headerText: 'Password',
                   suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye,color: Color(0xffB4B9CA),)),
