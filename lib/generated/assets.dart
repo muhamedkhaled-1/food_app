@@ -2,11 +2,17 @@
 class Assets {
   Assets._();
 
+  static const String assetsAppleeLogo = 'assets/applee_logo.svg';
+  static const String assetsAuthHeader = 'assets/auth_header.svg';
+  static const String assetsFacebookLogo = 'assets/facebook_logo.svg';
+  static const String assetsHeaderRight = 'assets/header_right.svg';
+  static const String assetsLeftHeader = 'assets/left_header.svg';
   static const String assetsLogo = 'assets/Logo.svg';
   static const String assetsOnboarding02 = 'assets/Onboarding_02.png';
   static const String assetsOnboarding03 = 'assets/Onboarding_03.png';
   static const String assetsOnboarding04 = 'assets/Onboarding_04.png';
   static const String assetsSplashBottom = 'assets/splash_bottom.svg';
   static const String assetsSplashHeader = 'assets/splash_header.svg';
+  static const String assetsTwitterLogo = 'assets/twitter_logo.svg';
 
 }

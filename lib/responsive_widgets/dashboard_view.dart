@@ -12,7 +12,7 @@ static const routeName='dashboardview';
     return Scaffold(
       body: AdaptiveLayout(
           mobileLayout: (context) => MobileLayout(),
-          tabletLayout: (context) => SizedBox(),
+          tabletLayout: (context) => MobileLayout(),
       ),
     );
   }

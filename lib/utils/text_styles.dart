@@ -29,6 +29,8 @@ class AppTextStyles {
   static TextStyle styleBold30 = TextStyle(
     fontSize: getResponsiveFontSize(fontSize: 30),
     fontWeight: FontWeight.w700,
+    color: Colors.white
+
   );
 
   static TextStyle styleRegular13Sen = TextStyle(
