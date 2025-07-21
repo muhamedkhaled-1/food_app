@@ -8,6 +8,8 @@ import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/scrollable_widget.dart';
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/widgets/custom_button.dart';
 
+import '../verification_view.dart';
+
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
 
@@ -45,7 +47,9 @@ class SignUpViewBody extends StatelessWidget {
                   SizedBox(height: 47,),
                   SizedBox(
                       width: double.infinity,
-                      child: CustomButton(onTap: (){}, text: 'Sign Up'))
+                      child: CustomButton(onTap: (){
+                        Navigator.pushNamed(context, VerificationView.routeName);
+                      }, text: 'Sign Up'))
 
                 ],
               ),

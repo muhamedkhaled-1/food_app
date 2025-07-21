@@ -6,9 +6,10 @@ import '../../../../../../generated/assets.dart';
 import '../../../../../../utils/text_styles.dart';
 
 class AuthHeader extends StatelessWidget {
-  const AuthHeader({super.key, required this.title, required this.subTitle,  this.positionedWidth});
+  const AuthHeader({super.key, required this.title, required this.subTitle, this.positionedWidth, this.verificationSubTitle, });
 final String title,subTitle;
 final double? positionedWidth;
+final String? verificationSubTitle;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -43,6 +44,13 @@ final double? positionedWidth;
                     style: AppTextStyles.styleRegular16
                         .copyWith(color: Colors.white),
                   )),
+              Positioned(
+                left: width * 0.27,
+                top: height * 0.78,
+                child: Text(
+                    verificationSubTitle??'',
+                    style: AppTextStyles.styleBold14.copyWith(color: Colors.white)),
+              ),
             ],
           );
         },

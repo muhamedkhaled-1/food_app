@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/constants.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/forget_password_view.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/verification_view.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_container.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/auth_header.dart';
 import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/container_custom_padding.dart';
@@ -13,8 +14,8 @@ import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/
 import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/widgets/custom_button.dart';
 import 'package:food_app/utils/text_styles.dart';
 
-class LoginPageViewBody extends StatelessWidget {
-  const LoginPageViewBody({super.key});
+class LoginViewBody extends StatelessWidget {
+  const LoginViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,8 @@ class LoginPageViewBody extends StatelessWidget {
                 SizedBox(height: 29,),
                 SizedBox(
                     width: double.infinity,
-                    child: CustomButton(onTap: (){}, text: 'Log In')),
+                    child: CustomButton(onTap: (){
+                    }, text: 'Log In')),
                 SizedBox(height:25 ,),
                 DontHaveAccount(),
                 SizedBox(height: 20,),

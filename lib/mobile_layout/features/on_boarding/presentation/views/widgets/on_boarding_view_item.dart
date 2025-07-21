@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/constants.dart';
 import 'package:food_app/core/services/shared_preferences_singleton.dart';
-import 'package:food_app/mobile_layout/features/auth/presentation/views/login_page_view.dart';
+import 'package:food_app/mobile_layout/features/auth/presentation/views/login_view.dart';
 
 import '../../../../../../utils/text_styles.dart';
 import 'custom_button.dart';
@@ -59,7 +59,7 @@ class OnBoardingViewItem extends StatelessWidget {
             child: GestureDetector(
                 onTap: () {
                   Prefs.setBool(KisOnboardingSeen, true);
-                  Navigator.pushReplacementNamed(context, LoginPageView.routeName);
+                  Navigator.pushReplacementNamed(context, LoginView.routeName);
                 },
                 child: Text('Skip'))),
         SizedBox(height: 40,)

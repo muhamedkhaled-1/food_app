@@ -6,7 +6,7 @@ import 'package:food_app/mobile_layout/features/on_boarding/presentation/views/w
 
 import '../../../../../constants.dart';
 import '../../../../../core/services/shared_preferences_singleton.dart';
-import '../../../auth/presentation/views/login_page_view.dart';
+import '../../../auth/presentation/views/login_view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -68,7 +68,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   position: currentPage,
                   onTap: () {
                     Prefs.setBool(KisOnboardingSeen, true);
-                    Navigator.pushReplacementNamed(context, LoginPageView.routeName);
+                    Navigator.pushReplacementNamed(context, LoginView.routeName);
                   },
                 )
               ],
