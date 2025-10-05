@@ -25,6 +25,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 children: [
                   LayoutTextFormField(
                     hintText: 'example@gmail.com',
+                    failureValidation: 'Please enter your email',
                     keyboardType: TextInputType.emailAddress,
                     headerText: 'Email',
                   ),

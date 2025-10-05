@@ -3,13 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:food_app/utils/text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, this.suffixIcon, required this.hintText, required this.keyboardType,});
+  const CustomTextFormField({super.key, this.suffixIcon, required this.hintText, required this.keyboardType, this.onSaved, required this.failureValidation,});
   final Widget? suffixIcon;
-  final String hintText;
+  final String hintText,failureValidation;
   final TextInputType keyboardType;
+ final void Function(String?)? onSaved;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+      if (value == null || value.isEmpty) {
+        return failureValidation;
+      }
+      return null;
+      },
       keyboardType: keyboardType,
       decoration: InputDecoration(
         suffixIcon:suffixIcon,

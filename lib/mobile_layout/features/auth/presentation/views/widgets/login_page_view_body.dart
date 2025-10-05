@@ -30,6 +30,7 @@ class LoginViewBody extends StatelessWidget {
               children: [
                 LayoutTextFormField(
                   hintText: 'example@gmail.com',
+                  failureValidation: 'Please enter your email',
                   keyboardType: TextInputType.emailAddress,
                   headerText: 'Email',
                 ),
@@ -39,6 +40,7 @@ class LoginViewBody extends StatelessWidget {
                 LayoutTextFormField(
                   hintText: '* * * * * * * * * *',
                   keyboardType: TextInputType.visiblePassword,
+                  failureValidation: 'Please enter your password',
                   headerText: 'Password',
                   suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye,color: Color(0xffB4B9CA),)),
                 ),

@@ -17,7 +17,8 @@ class AuthRepoImpl extends AuthRepo{
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     }catch(e){
-      return left(ServerFailure(e.toString()));
+      return left(
+          ServerFailure('theres error occurred'),);
     }
   }
 }
