@@ -23,6 +23,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   final GlobalKey<FormState> formKey=GlobalKey<FormState>();
    AutovalidateMode autovalidateMode=AutovalidateMode.disabled;
    late String email,password,name;
+   bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return CustomScrollableWidget(
@@ -47,7 +48,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     SizedBox(height: 24,),
                     LayoutTextFormField(
                       onSaved: (value) {
-                        email!=value;
+                        email=value!;
                       },
                         hintText: 'example@gmail.com',
                         failureValidation: 'Please enter your email',
@@ -55,21 +56,31 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         headerText: 'Email'),
                     SizedBox(height: 24,),
                     LayoutTextFormField(
+                      obscureText: obscureText,
                       onSaved: (value) {
-                        password!=value;
+                        password=value!;
                       },
                         hintText: '* * * * * * * * * *',
                         failureValidation: 'Please enter your password',
                         keyboardType: TextInputType.visiblePassword,
                         headerText: 'Password',
-                      suffixIcon: IconButton(onPressed: (){}, icon: FaIcon(FontAwesomeIcons.eyeSlash,size: 14,),color: Color(0xffB4B9CA),)),
+                      suffixIcon: IconButton(onPressed: (){
+                        setState(() {
+                          obscureText=!obscureText;
+                        });
+                      }, icon: FaIcon(FontAwesomeIcons.eyeSlash,size: 14,),color: Color(0xffB4B9CA),)),
                     SizedBox(height: 24,),
                     LayoutTextFormField(
+                      obscureText: obscureText,
                       hintText: '* * * * * * * * * *',
                       keyboardType: TextInputType.visiblePassword,
                       headerText: 'Re-Type Password',
                       failureValidation: 'your password doesnt match',
-                      suffixIcon: IconButton(onPressed: (){}, icon:  FaIcon(FontAwesomeIcons.eyeSlash,size: 14,),color: Color(0xffB4B9CA),)),
+                      suffixIcon: IconButton(onPressed: (){
+                        setState(() {
+                          obscureText=!obscureText;
+                        });
+                      }, icon:  FaIcon(FontAwesomeIcons.eyeSlash,size: 14,),color: Color(0xffB4B9CA),)),
                     SizedBox(height: 47,),
                     SizedBox(
                         width: double.infinity,
@@ -77,7 +88,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           if(formKey.currentState!.validate()){
                             formKey.currentState!.save();
                             context.read<SignupCubit>().createUserWithEmailAndPassword(email, password, name);
-                            Navigator.pushNamed(context, VerificationView.routeName);
                           }else{
                             setState(() {
                               autovalidateMode=AutovalidateMode.always;

@@ -4,11 +4,12 @@ import 'package:food_app/mobile_layout/features/auth/presentation/views/widgets/
 import '../../../../../../utils/text_styles.dart';
 
 class LayoutTextFormField extends StatelessWidget {
-  const LayoutTextFormField({super.key, this.suffixIcon, required this.hintText, required this.keyboardType, required this.headerText, this.onSaved, required this.failureValidation});
+  const LayoutTextFormField({super.key, this.suffixIcon, required this.hintText, required this.keyboardType, required this.headerText, this.onSaved, required this.failureValidation,this.obscureText=false});
   final Widget? suffixIcon;
   final String hintText,headerText,failureValidation;
   final TextInputType keyboardType;
   final void Function(String?)? onSaved;
+  final bool obscureText ;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,6 +18,7 @@ class LayoutTextFormField extends StatelessWidget {
         Text(headerText,style: AppTextStyles.styleRegular20,),
         SizedBox(height: 8,),
         CustomTextFormField(
+          obscureText:obscureText ,
           failureValidation:failureValidation ,
           onSaved: onSaved,
             suffixIcon: suffixIcon,
